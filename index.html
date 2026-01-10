@@ -1,176 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>101st CAB BDE HHC S-6 Help Desk</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
-    :root {
-      --primary: #0a3d62;
-      --secondary: #1e6fa3;
-      --background: #f4f6f8;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --accent: #0078d4;
-      --radius: 12px;
-    }
-
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--background);
-      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+      line-height: 1.6;
     }
-
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.25rem;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    /* Header */
-    .header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 2rem 1.5rem;
-      border-radius: var(--radius);
-      text-align: center;
-      margin-bottom: 1.5rem;
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .header h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.6rem;
-    }
-
-    .header p {
-      margin: 0;
-      opacity: 0.9;
-      font-size: 0.95rem;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-
-    /* Contact */
-    .contact-info {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-
-    .contact-item strong {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .contact-item a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* Buttons */
-    .button-group {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 0.9rem;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 10px;
-      transition: background 0.15s ease;
-    }
-
-    .btn:hover {
-      background: #005ea6;
-    }
-
-    .btn-secondary {
-      background: #e5e7eb;
-      color: #111827;
-    }
-
-    .btn-secondary:hover {
-      background: #d1d5db;
-    }
-
-    /* Notice */
     .notice {
-      background: #fff7ed;
-      border-left: 5px solid #f59e0b;
+      background: #fff5f5;
+      border-left: 4px solid #f56565;
       padding: 1rem;
       border-radius: 8px;
-      font-size: 0.9rem;
-      color: #92400e;
-      margin-bottom: 1.5rem;
+      color: #742a2a;
+      margin-bottom: 1rem;
     }
-
-    /* Footer */
-    .footer {
+    .notice strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #c53030;
+    }
+    .header {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      padding-top: 1rem;
     }
-
-    .footer-motto {
-      margin-top: 0.5rem;
+    .header h1 {
+      color: #2d3748;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .header p {
+      color: #718096;
+      font-size: 1rem;
+    }
+    .main-content {
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      background: #f7fafc;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+    .card h2 {
+      color: #2d3748;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4a5568;
+    }
+    .contact-item strong {
+      color: #2d3748;
+      min-width: 80px;
+    }
+    .contact-item a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
       font-weight: 600;
-      color: var(--text);
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    /* Desktop tweaks */
-    @media (min-width: 600px) {
-      .contact-info {
-        grid-template-columns: 1fr 1fr;
+    .btn:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .btn-secondary {
+      background: #48bb78;
+    }
+    .btn-secondary:hover {
+      background: #38a169;
+    }
+    .footer {
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: #718096;
+      font-size: 0.8rem;
+    }
+    .footer-text {
+      margin-bottom: 0.5rem;
+    }
+    .footer-motto {
+      color: #667eea;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      .button-group {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
+<div class="container">
+  <div class="notice">
+    <strong>Security Notice</strong>
+    This system is for authorized use only. Do not submit classified, sensitive, or personally identifiable information through this portal.
+  </div>
 
-    <div class="header">
-      <h1>101st CAB BDE HHC S-6 Help Desk</h1>
-      <p>Your IT support resource for the 101st Combat Aviation Brigade</p>
-    </div>
+  <div class="header">
+    <h1>101st CAB BDE HHC S-6 Help Desk</h1>
+    <p>Your IT support resource for the 101st Combat Aviation Brigade</p>
+  </div>
 
+  <div class="main-content">
     <div class="card">
       <h2>Contact Information</h2>
       <div class="contact-info">
         <div class="contact-item">
-          <strong>Phone</strong>
+          <strong>Phone:</strong>
           <a href="tel:18005551234">(800) 555-1234</a>
         </div>
         <div class="contact-item">
-          <strong>Hours</strong>
+          <strong>Hours:</strong>
           <span>Monday – Friday, 0930–1600</span>
         </div>
       </div>
@@ -180,22 +185,18 @@
       <h2>Quick Access</h2>
       <div class="button-group">
         <a class="btn" href="https://forms.microsoft.com/r/C76uYyk97V" target="_blank">Submit Ticket</a>
-        <a class="btn btn-secondary" href="information.html">Useful Information</a>
-        <a class="btn btn-secondary" href="links.html">Links & Resources</a>
+        <a class="btn btn-secondary" href="information.html">Useful Info</a>
       </div>
+      <a class="btn" href="links.html" style="display: block; margin-top: 1rem;">Links & Resources</a>
     </div>
-
-    <div class="notice">
-      <strong>Security Notice</strong><br>
-      This system is for authorized use only. Do not submit classified, sensitive, or personally identifiable information through this portal.
-    </div>
-
-    <div class="footer">
-      <div>Maintained by 101st CAB HHC BDE S-6</div>
-      <div>Last Updated: January 2026</div>
-      <div class="footer-motto">Have an Air Assault day.</div>
-    </div>
-
   </div>
+</div>
+
+<div class="footer-container">
+  <div class="footer">
+    <div class="footer-text">Maintained by 101st CAB HHC BDE S-6 | Last Updated: January 2026</div>
+    <div class="footer-motto">Have an Air Assault day.</div>
+  </div>
+</div>
 </body>
 </html>
